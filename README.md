@@ -4,7 +4,7 @@ Social login and authentication module for Angular 4. Supports authentication wi
 
 ## Getting started
 
-###Install via npm 
+### Install via npm 
 
 ```sh
 npm install --save angular4sociallogin
