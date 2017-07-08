@@ -1,2 +1,5 @@
 /e2e
 /src
+.editorconfig
+karma.conf.js
+protractor.conf.js
