@@ -1,0 +1,35 @@
+{
+  "name": "angular4-social-login",
+  "version": "0.1.7",
+  "description": "Social login and authentication module for Angular 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abacritt/angular4-social-login.git"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "authentication",
+    "social",
+    "google-signin",
+    "facebook-signin",
+    "google-login",
+    "facebook-login",
+    "social-authentication"
+  ],
+  "dependencies": {
+    "@angular/core": "^4.0.0",
+    "@angular/common": "^4.0.0",
+    "rxjs": "^5.1.0"
+  },
+  "author": "Jaibatrik Dutta <jaibatrik@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abacritt/angular4-social-login/issues"
+  },
+  "homepage": "https://github.com/abacritt/angular4-social-login#readme"
+}
