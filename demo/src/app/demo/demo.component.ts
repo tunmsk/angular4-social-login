@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from "../../../lib";
-import { SocialUser, GoogleLoginProvider } from "../../../lib/entities";
+import { AuthService } from "../../../..";
+import { SocialUser, GoogleLoginProvider } from "../../../../entities";
 
 @Component({
   selector: 'app-demo',

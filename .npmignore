@@ -1,5 +1,5 @@
-/e2e
-/src
+/demo
+
 .editorconfig
 karma.conf.js
 protractor.conf.js
