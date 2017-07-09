@@ -9,7 +9,7 @@
     </div>
     <div class="card-block">
       <button class="btn btn-social-icon btn-google" (click)="signInWithGoogle()"><span class="fa fa-google"></span></button>
-      <button class="btn btn-social-icon btn-facebook"><span class="fa fa-facebook"></span></button>
+      <button class="btn btn-social-icon btn-facebook" (click)="signInWithFB()"><span class="fa fa-facebook"></span></button>
     </div>
   </div>
   <div *ngIf="user" class="card text-center">

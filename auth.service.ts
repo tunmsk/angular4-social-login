@@ -30,7 +30,7 @@ export class AuthService {
         this._user = user;
         this._authState.next(user);
       }).catch((err) => {
-        this._authState.next(null);
+        // this._authState.next(null);
       });
     });
   }
@@ -57,7 +57,7 @@ export class AuthService {
       let providerId = this._user.provider;
       let providerObject = this.providers.get(providerId);
       if (providerObject) {
-        providerObject.signIn().then(() => {
+        providerObject.signOut().then(() => {
           resolve();
 
           this._user = null;

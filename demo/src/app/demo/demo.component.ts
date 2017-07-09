@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from "../../../..";
-import { SocialUser, GoogleLoginProvider } from "../../../../entities";
+import { SocialUser, GoogleLoginProvider, FacebookLoginProvider } from "../../../../entities";
 
 @Component({
   selector: 'app-demo',
@@ -22,6 +22,10 @@ export class DemoComponent implements OnInit {
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signOut(): void {
