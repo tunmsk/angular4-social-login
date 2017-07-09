@@ -4,7 +4,10 @@
   "description": "Social login and authentication module for Angular 4",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "transpile": "ngc",
+    "package": "rollup -c",
+    "minify": "uglifyjs dist/bundles/angular4-social-login.js --screw-ie8 --compress --mangle --comments --output dist/bundles/angular4-social-login.min.js",
+    "build": "npm run transpile && npm run package && npm run minify"
   },
   "repository": {
     "type": "git",
@@ -31,5 +34,16 @@
   "bugs": {
     "url": "https://github.com/abacritt/angular4-social-login/issues"
   },
-  "homepage": "https://github.com/abacritt/angular4-social-login#readme"
+  "homepage": "https://github.com/abacritt/angular4-social-login#readme",
+  "devDependencies": {
+    "@angular/compiler": "^4.2.6",
+    "@angular/compiler-cli": "^4.2.6",
+    "@angular/platform-server": "^4.2.6",
+    "rollup": "^0.43.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "typescript": "^2.4.1",
+    "uglify-js": "^3.0.24"
+  }
 }
