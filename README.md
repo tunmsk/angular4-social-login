@@ -16,10 +16,11 @@ In your `AppModule`, import the `SocialLoginModule`
 
 ```javascript
 import { SocialLoginModule } from "angular4-social-login";
-import { LoginProviders, GoogleLoginProvider } from "angular4-social-login/entities";
+import { LoginProviders, GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login/entities";
 
 let loginProviders = new LoginProviders();
 loginProviders.addProvider(GoogleLoginProvider.PROVIDER_ID, new GoogleLoginProvider("OAuth-Client-Id"));
+loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginProvider("FB-App-Id"));
 
 @NgModule({
   declarations: [
@@ -52,6 +53,10 @@ export class DemoComponent implements OnInit {
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signInWithFB(): void {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
   }
 
   signOut(): void {
@@ -89,4 +94,14 @@ export class DemoComponent implements OnInit {
   }
 
 }
+```
+
+### Display the user information
+
+```html
+<img src="{{ user.photoUrl }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
 ```

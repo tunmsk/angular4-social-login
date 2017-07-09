@@ -14,7 +14,6 @@ let loginProviders = new LoginProviders();
 loginProviders.addProvider(GoogleLoginProvider.PROVIDER_ID, new GoogleLoginProvider("624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com"));
 loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginProvider("561602290896109"));
 
-
 @NgModule({
   declarations: [
     AppComponent,
