@@ -40,7 +40,7 @@ export class AppModule { }
 
 ```javascript
 import { AuthService } from "angular4-social-login";
-import { SocialUser, GoogleLoginProvider } from "angular4-social-login/entities";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login/entities";
 
 @Component({
   selector: 'app-demo',
@@ -72,7 +72,7 @@ You are notified when user logs in or logs out. You receive a `SocialUser` objec
 
 ```javascript
 import { AuthService } from "angular4-social-login";
-import { SocialUser, GoogleLoginProvider } from "angular4-social-login/entities";
+import { SocialUser } from "angular4-social-login/entities";
 
 @Component({
   selector: 'app-demo',

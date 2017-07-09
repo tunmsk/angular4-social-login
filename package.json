@@ -1,6 +1,6 @@
 {
   "name": "angular4-social-login",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Social login and authentication module for Angular 4",
   "main": "index.js",
   "scripts": {
