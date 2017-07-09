@@ -16,7 +16,7 @@ In your `AppModule`, import the `SocialLoginModule`
 
 ```javascript
 import { SocialLoginModule } from "angular4-social-login";
-import { LoginProviders, GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login/entities";
+import { LoginProviders, GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
 
 let loginProviders = new LoginProviders();
 loginProviders.addProvider(GoogleLoginProvider.PROVIDER_ID, new GoogleLoginProvider("OAuth-Client-Id"));
@@ -40,7 +40,7 @@ export class AppModule { }
 
 ```javascript
 import { AuthService } from "angular4-social-login";
-import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login/entities";
+import { FacebookLoginProvider, GoogleLoginProvider } from "angular4-social-login";
 
 @Component({
   selector: 'app-demo',
@@ -72,7 +72,7 @@ You are notified when user logs in or logs out. You receive a `SocialUser` objec
 
 ```javascript
 import { AuthService } from "angular4-social-login";
-import { SocialUser } from "angular4-social-login/entities";
+import { SocialUser } from "angular4-social-login";
 
 @Component({
   selector: 'app-demo',

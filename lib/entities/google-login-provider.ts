@@ -60,7 +60,7 @@ export class GoogleLoginProvider extends BaseLoginProvider {
 
   signOut(): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.auth2.signOut().then((err) => {
+      this.auth2.signOut().then((err: any) => {
         if (err) {
           reject(err);
         } else {

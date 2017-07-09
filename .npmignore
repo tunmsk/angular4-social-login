@@ -1,7 +1,12 @@
 /demo
-/dist
+/lib
+
+index.ts
 
 .editorconfig
 karma.conf.js
 protractor.conf.js
 .angular-cli.json
+CONTRIBUTING.md
+rollup.config.js
+tsconfig.json

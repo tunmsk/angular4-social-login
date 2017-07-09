@@ -1,2 +1,2 @@
-export { SocialLoginModule } from './sociallogin.module';
-export { AuthService } from './auth.service';
+export * from './lib';
+export * from "./lib/entities";

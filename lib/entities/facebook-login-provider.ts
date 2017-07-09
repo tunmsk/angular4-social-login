@@ -23,10 +23,10 @@ export class FacebookLoginProvider extends BaseLoginProvider {
           });
           FB.AppEvents.logPageView();
 
-          FB.getLoginStatus(function (response) {
+          FB.getLoginStatus(function (response: any) {
             if (response.status === 'connected') {
               console.log("connected");
-              FB.api('/me?fields=name,email,picture', (response) => {
+              FB.api('/me?fields=name,email,picture', (response: any) => {
                 let user: SocialUser = new SocialUser();
 
                 user.id = response.id;
@@ -44,9 +44,9 @@ export class FacebookLoginProvider extends BaseLoginProvider {
 
   signIn(): Promise<SocialUser> {
     return new Promise((resolve, reject) => {
-      FB.login((response) => {
+      FB.login((response: any) => {
         if (response.authResponse) {
-          FB.api('/me?fields=name,email,picture', (response) => {
+          FB.api('/me?fields=name,email,picture', (response: any) => {
             let user: SocialUser = new SocialUser();
 
             user.id = response.id;
@@ -63,7 +63,7 @@ export class FacebookLoginProvider extends BaseLoginProvider {
 
   signOut(): Promise<any> {
     return new Promise((resolve, reject) => {
-      FB.logout((response) => {
+      FB.logout((response: any) => {
         resolve();
       });
     });
