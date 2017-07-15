@@ -10,6 +10,9 @@ export function configFactory(config: AuthServiceConfig) {
 @NgModule({
   imports: [
     CommonModule
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class SocialLoginModule {

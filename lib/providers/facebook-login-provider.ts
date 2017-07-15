@@ -25,7 +25,6 @@ export class FacebookLoginProvider extends BaseLoginProvider {
 
           FB.getLoginStatus(function (response: any) {
             if (response.status === 'connected') {
-              console.log("connected");
               FB.api('/me?fields=name,email,picture', (response: any) => {
                 let user: SocialUser = new SocialUser();
 

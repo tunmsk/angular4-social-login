@@ -15,12 +15,19 @@ npm install --save angular4-social-login
 In your `AppModule`, import the `SocialLoginModule`
 
 ```javascript
-import { SocialLoginModule } from "angular4-social-login";
-import { LoginProviders, GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
+import { SocialLoginModule, AuthServiceConfig } from "angular4-social-login";
+import { GoogleLoginProvider, FacebookLoginProvider } from "angular4-social-login";
 
-let loginProviders = new LoginProviders();
-loginProviders.addProvider(GoogleLoginProvider.PROVIDER_ID, new GoogleLoginProvider("OAuth-Client-Id"));
-loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginProvider("FB-App-Id"));
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("Google-OAuth-Client-Id")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("Facebook-App-Id")
+  }
+]);
 
 @NgModule({
   declarations: [
@@ -28,7 +35,7 @@ loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginP
   ],
   imports: [
     ...
-    SocialLoginModule.initialize(loginProviders)
+    SocialLoginModule.initialize(config)
   ],
   providers: [],
   bootstrap: [...]
@@ -104,4 +111,15 @@ export class DemoComponent implements OnInit {
   <h4>{{ user.name }}</h4>
   <p>{{ user.email }}</p>
 </div>
+```
+
+## Building with AoT
+
+If you are facing issue in building your app with AoT, check [this document](https://github.com/abacritt/angular4-social-login/blob/master/README-AOT.md).
+
+## Running the demo app
+
+```sh
+cp -R ./lib ./demo/src/lib && npm install
+ng serve
 ```

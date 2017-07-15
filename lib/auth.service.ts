@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { LoginProvider } from "./entities/login-provider";
 import { SocialUser } from "./entities/user";
 
-interface AuthServiceConfigItem {
+export interface AuthServiceConfigItem {
   id: string,
   provider: LoginProvider
 }

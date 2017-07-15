@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 
-import { SocialLoginModule, AuthService, AuthServiceConfig } from "../lib";
+import { SocialLoginModule, AuthServiceConfig } from "../lib";
 import { GoogleLoginProvider, FacebookLoginProvider } from '../lib/providers';
 
 let config = new AuthServiceConfig([
