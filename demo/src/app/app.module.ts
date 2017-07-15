@@ -7,12 +7,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 
-import { SocialLoginModule, AuthService } from "../../..";
-import { LoginProviders, GoogleLoginProvider, FacebookLoginProvider } from '../../../entities';
+import { SocialLoginModule, AuthService, AuthServiceConfig } from "../lib";
+import { GoogleLoginProvider, FacebookLoginProvider } from '../lib/providers';
 
-let loginProviders = new LoginProviders();
-loginProviders.addProvider(GoogleLoginProvider.PROVIDER_ID, new GoogleLoginProvider("624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com"));
-loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginProvider("561602290896109"));
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com")
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("561602290896109")
+  }
+]);
 
 @NgModule({
   declarations: [
@@ -24,9 +31,11 @@ loginProviders.addProvider(FacebookLoginProvider.PROVIDER_ID, new FacebookLoginP
     BrowserModule,
     FormsModule,
     HttpModule,
-    SocialLoginModule.initialize(loginProviders)
+    SocialLoginModule.initialize(config)
   ],
-  providers: [AuthService],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

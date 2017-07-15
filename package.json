@@ -2,14 +2,15 @@
   "name": "angular4-social-login",
   "version": "0.2.14",
   "description": "Social login and authentication module for Angular 4",
-  "main": "dist/angular4-social-login.min.js",
+  "main": "dist/angular4-social-login.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "transpile": "ngc",
     "package": "rollup -c",
     "minify": "uglifyjs dist/angular4-social-login.js --screw-ie8 --compress --mangle --comments --output dist/angular4-social-login.min.js",
-    "build": "rm -rf dist && npm run transpile && npm run package && npm run minify",
-    "prepare": "npm run build"
+    "build": "rm -rf ./dist && npm run transpile && npm run package",
+    "prepare": "npm run build",
+    "localdeploy": "rm -rf ./demo/src/lib && cp -R ./lib ./demo/src/lib"
   },
   "repository": {
     "type": "git",

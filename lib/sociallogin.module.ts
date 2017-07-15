@@ -1,32 +1,30 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginProviders } from "./entities/login-providers";
-import { AuthService } from "./auth.service";
+import { AuthService, AuthServiceConfig } from "./auth.service";
+
+export function configFactory(config: AuthServiceConfig) {
+  return config;
+}
 
 @NgModule({
   imports: [
     CommonModule
-  ],
-  declarations: [],
-  providers: [
-    AuthService
   ]
 })
 export class SocialLoginModule {
 
-  constructor() {}
-
-  static initialize(config: LoginProviders): any {
-    let loginModule = {
+  public static initialize(config: AuthServiceConfig): ModuleWithProviders {
+    return {
       ngModule: SocialLoginModule,
       providers: [
         AuthService,
-        { provide: LoginProviders, useValue: config }
+        {
+          provide: AuthServiceConfig,
+          useValue: config
+        }
       ]
     };
-
-    return loginModule;
   }
 
 }

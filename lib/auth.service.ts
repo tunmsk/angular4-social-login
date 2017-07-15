@@ -2,9 +2,24 @@ import { Injectable } from '@angular/core';
 
 import { Observable, BehaviorSubject } from 'rxjs';
 
-import { LoginProviders } from "./entities/login-providers";
 import { LoginProvider } from "./entities/login-provider";
 import { SocialUser } from "./entities/user";
+
+interface AuthServiceConfigItem {
+  id: string,
+  provider: LoginProvider
+}
+
+export class AuthServiceConfig {
+  providers: Map<string, LoginProvider> = new Map<string, LoginProvider>();
+
+  constructor(providers: AuthServiceConfigItem[]) {
+    for (var i = 0; i < providers.length; i++) {
+      var element = providers[i];
+      this.providers.set(element.id, element.provider);
+    }
+  }
+}
 
 @Injectable()
 export class AuthService {
@@ -20,8 +35,8 @@ export class AuthService {
     return this._authState.asObservable();
   }
 
-  constructor(providers: LoginProviders) {
-    this.providers = providers.get();
+  constructor(config: AuthServiceConfig) {
+    this.providers = config.providers;
 
     this.providers.forEach((provider: LoginProvider, key: string) => {
       provider.initialize().then((user: SocialUser) => {

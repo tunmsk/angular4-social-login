@@ -1,5 +1,5 @@
-import { BaseLoginProvider } from "./base-login-provider";
-import { SocialUser } from "./user";
+import { BaseLoginProvider } from "../entities/base-login-provider";
+import { SocialUser } from "../entities/user";
 
 declare let gapi: any;
 
