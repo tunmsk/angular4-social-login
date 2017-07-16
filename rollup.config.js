@@ -1,13 +1,22 @@
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import uglify from 'rollup-plugin-uglify';
+import sourcemaps from 'rollup-plugin-sourcemaps';
+// import uglify from 'rollup-plugin-uglify';
+
+import * as _angular_core from '@angular/core';
 
 export default {
-  entry: 'dist/index.js',
+  entry: 'dist/a4sl-flat.js',
   dest: 'dist/angular4-social-login.js', // output a single application bundle
-  sourceMap: false,
-  format: 'iife',
+  sourceMap: true,
+  format: 'umd',
   moduleName: 'Angular4SocialLogin',
+  external: [
+    '@angular/core'
+  ],
+  globals: {
+    '@angular/core': 'ng.core'
+  },
   onwarn: function (warning) {
     // Skip certain warnings
 
@@ -18,10 +27,11 @@ export default {
     console.warn(warning.message);
   },
   plugins: [
-    nodeResolve({ jsnext: true, module: true }),
     commonjs({
-      include: 'node_modules/rxjs/**',
+      include: ['node_modules/rxjs/**']
     }),
-    uglify()
+    sourcemaps(),
+    nodeResolve({ jsnext: true, module: true })
+    // uglify()
   ]
 };

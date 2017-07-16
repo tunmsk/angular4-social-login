@@ -1,5 +1,6 @@
 /demo
 /lib
+/docs
 
 index.ts
 
@@ -10,3 +11,5 @@ protractor.conf.js
 CONTRIBUTING.md
 rollup.config.js
 tsconfig.json
+README-AOT.md
+webpack.config.js

@@ -1,6 +1,6 @@
 {
   "name": "angular4-social-login",
-  "version": "0.2.14",
+  "version": "1.0.7",
   "description": "Social login and authentication module for Angular 4",
   "main": "dist/angular4-social-login.js",
   "typings": "dist/index.d.ts",
@@ -8,8 +8,8 @@
     "transpile": "ngc",
     "package": "rollup -c",
     "build": "rm -rf ./dist && npm run transpile && npm run package",
-    "prepare": "npm run build",
-    "localdeploy": "rm -rf ./demo/src/lib && cp -R ./lib ./demo/src/lib"
+    "prepublishOnly": "npm run build",
+    "localdeploy": "rm -rf ./demo/lib-dist && cp -R ./lib ./demo/lib-dist"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "facebook-login",
     "social-authentication"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "@angular/core": "^4.0.0",
     "@angular/common": "^4.0.0",
     "rxjs": "^5.1.0"
@@ -38,14 +38,21 @@
   },
   "homepage": "https://github.com/abacritt/angular4-social-login#readme",
   "devDependencies": {
-    "@angular/compiler": "^4.2.6",
-    "@angular/compiler-cli": "^4.2.6",
-    "@angular/platform-server": "^4.2.6",
+    "@angular/animations": "^4.3.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.3.0",
+    "@angular/compiler-cli": "^4.3.0",
+    "@angular/core": "^4.3.0",
+    "@angular/platform-browser": "^4.3.0",
+    "@angular/platform-server": "^4.3.0",
     "rollup": "^0.43.0",
     "rollup-plugin-commonjs": "^8.0.2",
     "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-uglify": "^2.0.1",
+    "rxjs": "^5.1.0",
     "typescript": "^2.4.1",
-    "uglify-js": "^3.0.24"
+    "uglify-js": "^3.0.24",
+    "zone.js": "^0.8.13"
   }
 }
